@@ -109,11 +109,11 @@ class Practice1Page extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 4.0),
                         decoration: BoxDecoration(
-                          color: Color(0xff75A3F9),
+                          color: Color(0xff837EF3),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Icon(
-                          Icons.wifi,
+                          Icons.volume_down_rounded,
                           color: Colors.white,
                         ),
                       ),
@@ -124,7 +124,7 @@ class Practice1Page extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Connections",
+                            "Sounds and vibration",
                             style: TextStyle(
                                 color: Colors.black.withOpacity(0.72),
                                 fontWeight: FontWeight.w500,
@@ -134,7 +134,7 @@ class Practice1Page extends StatelessWidget {
                             height: 4.0,
                           ),
                           Text(
-                            "Wi-fi Bluetooth Flight mode",
+                            "Sounds mode Ringtone",
                             style: TextStyle(
                               color: Colors.black.withOpacity(0.35),
                               fontWeight: FontWeight.w500,
@@ -155,11 +155,11 @@ class Practice1Page extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 4.0),
                         decoration: BoxDecoration(
-                          color: Color(0xff75A3F9),
+                          color: Color(0xffE77475),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Icon(
-                          Icons.wifi,
+                          Icons.notifications_active,
                           color: Colors.white,
                         ),
                       ),
@@ -170,7 +170,7 @@ class Practice1Page extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Connections",
+                            "Notifications",
                             style: TextStyle(
                                 color: Colors.black.withOpacity(0.72),
                                 fontWeight: FontWeight.w500,
@@ -180,7 +180,7 @@ class Practice1Page extends StatelessWidget {
                             height: 4.0,
                           ),
                           Text(
-                            "Wi-fi Bluetooth Flight mode",
+                            "Status bar Do not disturb",
                             style: TextStyle(
                               color: Colors.black.withOpacity(0.35),
                               fontWeight: FontWeight.w500,
