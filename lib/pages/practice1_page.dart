@@ -90,6 +90,110 @@ class Practice1Page extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20.0,
+                vertical: 16.0,
+              ),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 4.0),
+                        decoration: BoxDecoration(
+                          color: Color(0xff75A3F9),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Icon(
+                          Icons.wifi,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 20.0,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Connections",
+                            style: TextStyle(
+                                color: Colors.black.withOpacity(0.72),
+                                fontWeight: FontWeight.w500,
+                                fontSize: 18.0),
+                          ),
+                          const SizedBox(
+                            height: 4.0,
+                          ),
+                          Text(
+                            "Wi-fi Bluetooth Flight mode",
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.35),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 6.0,),
+                  Divider(
+                    indent: 50.0,
+                  ),
+                  const SizedBox(height: 6.0,),
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 4.0),
+                        decoration: BoxDecoration(
+                          color: Color(0xff75A3F9),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Icon(
+                          Icons.wifi,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 20.0,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Connections",
+                            style: TextStyle(
+                                color: Colors.black.withOpacity(0.72),
+                                fontWeight: FontWeight.w500,
+                                fontSize: 18.0),
+                          ),
+                          const SizedBox(
+                            height: 4.0,
+                          ),
+                          Text(
+                            "Wi-fi Bluetooth Flight mode",
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.35),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
