@@ -51,12 +51,15 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
+              margin: const EdgeInsets.symmetric(horizontal: 12.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(16.0),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.12),
+                    color: Colors.black.withOpacity(0.08),
+                    offset: Offset(4, 4),
+                    blurRadius: 12.0,
                   ),
                 ],
               ),
