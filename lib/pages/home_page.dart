@@ -18,29 +18,66 @@ class HomePage extends StatelessWidget {
               height: 200.0,
               width: 200.0,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(18.0),
-                  image: DecorationImage(
-                    // image: NetworkImage("https://ih1.redbubble.net/image.622748019.0162/pp,504x498-pad,600x600,f8f8f8.u1.jpg",),
-                    image: NetworkImage(
-                      "https://malditopaparazzo.com.ar/wp-content/uploads/2021/05/David-Chicle.jpg",
-                    ),
+                borderRadius: BorderRadius.circular(18.0),
+                image: DecorationImage(
+                  // image: NetworkImage("https://ih1.redbubble.net/image.622748019.0162/pp,504x498-pad,600x600,f8f8f8.u1.jpg",),
+                  image: NetworkImage(
+                    "https://malditopaparazzo.com.ar/wp-content/uploads/2021/05/David-Chicle.jpg",
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.12),
-                      offset: Offset(4, 4),
-                      blurRadius: 12.0,
-                    ),
-                  ]),
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.12),
+                    offset: Offset(4, 4),
+                    blurRadius: 12,
+                  ),
+                ],
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
             Text(
               "Flutter Components",
-              style: GoogleFonts.montserrat(
+              style: GoogleFonts.poppins(
                 fontSize: 22.0,
                 fontWeight: FontWeight.w400,
+              ),
+            ),
+            const SizedBox(
+              width: 160.0,
+              child: Divider(
+                thickness: 0.45,
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.12),
+                  ),
+                ],
+              ),
+              child: ListTile(
+                leading: Icon(
+                  Icons.check_circle_outline,
+                  color: Color(0xff4A5467),
+                ),
+                title: Text(
+                  "Avatar",
+                  style: GoogleFonts.poppins(),
+                ),
+                subtitle: Text(
+                  "Ir al detalle de Avatar",
+                  style: GoogleFonts.poppins(
+                    fontSize: 13.0,
+                  ),
+                ),
+                trailing: Icon(
+                  Icons.chevron_right,
+                ),
               ),
             ),
           ],
