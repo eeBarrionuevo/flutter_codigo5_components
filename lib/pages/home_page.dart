@@ -54,10 +54,9 @@ class HomePage extends StatelessWidget {
               ),
               ItemComponentWidget(
                 title: "Avatar",
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> AvatarPage()));
-                },
+                toPage: AvatarPage(),
               ),
+
 
             ],
           ),
@@ -69,11 +68,11 @@ class HomePage extends StatelessWidget {
 
 class ItemComponentWidget extends StatelessWidget {
   String title;
-  Function onTap;
+  Widget toPage;
 
   ItemComponentWidget({
     required this.title,
-    required this.onTap
+    required this.toPage,
   });
 
   @override
@@ -93,7 +92,7 @@ class ItemComponentWidget extends StatelessWidget {
       ),
       child: ListTile(
         onTap: () {
-          onTap();
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> toPage));
         },
         leading: Icon(
           Icons.check_circle_outline,
