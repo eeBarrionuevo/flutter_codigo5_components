@@ -13,7 +13,7 @@ class AvatarPage extends StatelessWidget {
         centerTitle: false,
         elevation: 0,
         backgroundColor: Colors.deepPurple,
-        actions: [
+        actions: const [
           CircleAvatar(
             backgroundColor: Colors.white,
             child: Text(
@@ -25,7 +25,15 @@ class AvatarPage extends StatelessWidget {
               ),
             ),
           ),
-
+          SizedBox(
+            width: 10.0,
+          ),
+          CircleAvatar(
+            backgroundImage: NetworkImage("https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",),
+          ),
+          SizedBox(
+            width: 10.0,
+          ),
           Icon(Icons.search,),
           Icon(Icons.more_vert,),
 
