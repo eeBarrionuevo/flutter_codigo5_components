@@ -29,14 +29,30 @@ class AvatarPage extends StatelessWidget {
             width: 10.0,
           ),
           CircleAvatar(
-            backgroundImage: NetworkImage("https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",),
+            backgroundImage: NetworkImage(
+              "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            ),
           ),
           SizedBox(
             width: 10.0,
           ),
-          Icon(Icons.search,),
-          Icon(Icons.more_vert,),
-
+          Icon(
+            Icons.search,
+          ),
+          Icon(
+            Icons.more_vert,
+          ),
+        ],
+      ),
+      body: Column(
+        children: const [
+          FadeInImage(
+            fadeInDuration: Duration(milliseconds: 2000,),
+            placeholder: AssetImage("assets/images/loading.gif"),
+            image: NetworkImage("https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
+          ),
+          // Image.asset('assets/images/loading.gif'),
+          // Image.network("https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",),
         ],
       ),
     );
