@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_codigo5_components/pages/alert_page.dart';
 import 'package:flutter_codigo5_components/pages/avatar_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -52,11 +53,16 @@ class HomePage extends StatelessWidget {
                   thickness: 0.45,
                 ),
               ),
+
               ItemComponentWidget(
                 title: "Avatar",
                 toPage: AvatarPage(),
               ),
 
+              ItemComponentWidget(
+                title: "Alert",
+                toPage: AlertPage(),
+              ),
 
             ],
           ),
