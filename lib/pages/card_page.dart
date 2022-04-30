@@ -16,6 +16,7 @@ class CardPage extends StatelessWidget {
       ),
       body: Column(
         children: [
+          //Card 1
           Container(
             margin:
                 const EdgeInsets.symmetric(horizontal: 12.0, vertical: 14.0),
@@ -83,6 +84,26 @@ class CardPage extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+                ),
+              ],
+            ),
+          ),
+
+          //Card 2
+
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12.0,),
+            color: Colors.lightBlueAccent,
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/images/item1.png',
+                  height: 120.0,
+                ),
+                Column(
+                  children: [
+                    Text("Fiorella Guadalupe de las Nieves Azules")
+                  ],
                 ),
               ],
             ),
