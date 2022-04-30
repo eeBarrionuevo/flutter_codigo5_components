@@ -147,8 +147,16 @@ class CardPage extends StatelessWidget {
             margin:
                 const EdgeInsets.symmetric(vertical: 12.0, horizontal: 12.0),
             decoration: BoxDecoration(
-                color: Colors.lightBlueAccent,
-                borderRadius: BorderRadius.circular(12.0)),
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.06),
+                  blurRadius: 12,
+                  offset: const Offset(4, 4)
+                ),
+              ]
+            ),
             child: Row(
               children: [
                 // Container(
@@ -176,11 +184,14 @@ class CardPage extends StatelessWidget {
                 const SizedBox(
                   width: 8.0,
                 ),
-                Expanded(
-                  child: Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-                    maxLines: 7,
-                    overflow: TextOverflow.ellipsis,
+                const Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text(
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                      maxLines: 7,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                 ),
               ],
