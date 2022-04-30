@@ -147,16 +147,14 @@ class CardPage extends StatelessWidget {
             margin:
                 const EdgeInsets.symmetric(vertical: 12.0, horizontal: 12.0),
             decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12.0),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.06),
-                  blurRadius: 12,
-                  offset: const Offset(4, 4)
-                ),
-              ]
-            ),
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12.0),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black.withOpacity(0.06),
+                      blurRadius: 12,
+                      offset: const Offset(4, 4)),
+                ]),
             child: Row(
               children: [
                 // Container(
@@ -190,6 +188,86 @@ class CardPage extends StatelessWidget {
                     width: 130.0,
                     height: 130.0,
                     fit: BoxFit.cover,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          //Card 4
+
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16.0),
+            margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 10.0),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(6.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.07),
+                    offset: const Offset(4, 4),
+                    blurRadius: 12,
+                  ),
+                ]),
+            child: Row(
+              children: [
+                CircleAvatar(
+                  radius: 24.0,
+                  backgroundImage: NetworkImage(
+                    "https://images.pexels.com/photos/718978/pexels-photo-718978.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                  ),
+                ),
+                const SizedBox(
+                  width: 14.0,
+                ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "John Doe",
+                        style: GoogleFonts.montserrat(
+                            color: Color(0xff3D4A81),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16.0),
+                      ),
+                      SizedBox(
+                        height: 3.0,
+                      ),
+                      Text(
+                        "Ceo at Apple Inc",
+                        style: GoogleFonts.montserrat(
+                            color: Color(0xff9DA4BF),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12.0),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 9.0, vertical: 5.0),
+                  decoration: BoxDecoration(
+                    color: Color(0xffDCE5FF),
+                    borderRadius: BorderRadius.circular(6.0),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.settings,
+                        size: 15.0,
+                        color: Color(0xff4D7CFF),
+                      ),
+                      SizedBox(
+                        width: 3.0,
+                      ),
+                      Text(
+                        "Settings",
+                        style: GoogleFonts.montserrat(
+                          color: Color(0xff4D7CFF),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
