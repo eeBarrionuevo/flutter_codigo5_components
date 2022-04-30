@@ -90,14 +90,24 @@ class CardPage extends StatelessWidget {
           ),
 
           //Card 2
-
           Container(
             margin: const EdgeInsets.symmetric(
               horizontal: 12.0,
               vertical: 12.0,
             ),
-            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
-            color: Colors.white,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10.0,
+              vertical: 12.0,
+            ),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20.0),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black.withOpacity(0.07),
+                      offset: const Offset(4, 4),
+                      blurRadius: 12.0),
+                ]),
             child: Row(
               children: [
                 Image.asset(
@@ -110,9 +120,8 @@ class CardPage extends StatelessWidget {
                       Text(
                         "Fiorella Guadalupe de las Nieves Azules",
                         style: GoogleFonts.montserrat(
-                          color: Colors.black.withOpacity(0.7),
-                          fontSize: 16.0
-                        ),
+                            color: Colors.black.withOpacity(0.7),
+                            fontSize: 16.0),
                       ),
                       SizedBox(
                         height: 6.0,
@@ -122,11 +131,34 @@ class CardPage extends StatelessWidget {
                         maxLines: 4,
                         overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.montserrat(
-                          color: Colors.black.withOpacity(0.60),
-                          fontSize: 13.0
-                        ),
+                            color: Colors.black.withOpacity(0.60),
+                            fontSize: 13.0),
                       ),
                     ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          //Card 3
+
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 12.0),
+            color: Colors.lightBlueAccent,
+            child: Row(
+              children: [
+                Image.network(
+                  "https://images.pexels.com/photos/11780519/pexels-photo-11780519.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                  width: 130.0,
+                  height: 130.0,
+                  fit: BoxFit.cover,
+                ),
+                Expanded(
+                  child: Text(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                    maxLines: 7,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
               ],
