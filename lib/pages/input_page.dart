@@ -7,8 +7,10 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+
   bool isInvisible = true;
   String name = "";
+  TextEditingController _nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -181,21 +183,25 @@ class _InputPageState extends State<InputPage> {
                 height: 30.0,
               ),
               TextField(
+                controller: _nameController,
                 decoration: InputDecoration(
                   label: Text(
                     "Ingresa tu nombre",
                   ),
                 ),
-                onChanged: (String value) {
-                  name = value;
-                },
-                onTap: () {
-                  print("On TAP!!");
-                },
+                // onChanged: (String value) {
+                //   name = value;
+                // },
+                // onTap: () {
+                //   print("On TAP!!");
+                // },
               ),
               ElevatedButton(
                 onPressed: () {
-                  print(name);
+                  _nameController.text = "Ramón";
+                  setState(() {
+
+                  });
                 },
                 child: Text("Mostrar valor!"),
               ),
