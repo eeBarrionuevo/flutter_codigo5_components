@@ -7,14 +7,10 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-
   bool isInvisible = true;
   String name = "";
-  TextEditingController _nameController = TextEditingController(text: "Ramón Juan");
-
-  void getNameData(){
-    print(_nameController.text);
-  }
+  TextEditingController _nameController =
+      TextEditingController(text: "Ramón Juan");
 
   @override
   Widget build(BuildContext context) {
@@ -198,28 +194,30 @@ class _InputPageState extends State<InputPage> {
               ElevatedButton(
                 onPressed: () {
                   getNameData();
-                  setState(() {
-                  });
+                  setState(() {});
                 },
                 child: const Text("Mostrar valor!"),
               ),
-
               const SizedBox(
                 height: 30.0,
               ),
-
               TextField(
+                toolbarOptions: ToolbarOptions(
+                  copy: false,
+                  cut: false,
+                  paste: false,
+                  selectAll: false,
+                ),
+                readOnly: true,
                 decoration: InputDecoration(
                   hintText: "Fecha de nacimiento",
                   suffixIcon: Icon(Icons.date_range),
                 ),
-                onTap: (){
-                  print("Holaa");
+                onTap: () {
                   FocusScope.of(context).requestFocus(FocusNode());
+                  selectDate();
                 },
               ),
-
-
               const SizedBox(
                 height: 100.0,
               ),
@@ -227,6 +225,19 @@ class _InputPageState extends State<InputPage> {
           ),
         ),
       ),
+    );
+  }
+
+  void getNameData() {
+    print(_nameController.text);
+  }
+
+  selectDate() {
+    showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime.now(),
+      lastDate: DateTime.now(),
     );
   }
 }
