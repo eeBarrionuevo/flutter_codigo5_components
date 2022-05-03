@@ -1,6 +1,5 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class InputPage extends StatelessWidget {
   const InputPage({Key? key}) : super(key: key);
@@ -32,26 +31,26 @@ class InputPage extends StatelessWidget {
                   label: const Text("Correo electrónico"),
                   hintText: "Ingresa tu correo electrónico",
                   hintStyle: TextStyle(
-                    color: Colors.black.withOpacity(0.35),
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16.0
-                  ),
+                      color: Colors.black.withOpacity(0.35),
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16.0),
                   icon: Icon(Icons.email),
                   prefixIcon: Icon(Icons.alternate_email),
                   suffixIcon: Icon(Icons.email_outlined),
                 ),
-                onChanged: (String value){
+                onChanged: (String value) {
                   print(value);
                 },
               ),
               const SizedBox(
                 height: 20.0,
               ),
-
               const TextField(
                 decoration: InputDecoration(
                   hintText: "Buscar producto",
-                  prefixIcon: Icon(Icons.search,),
+                  prefixIcon: Icon(
+                    Icons.search,
+                  ),
                   enabled: true,
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
@@ -73,7 +72,6 @@ class InputPage extends StatelessWidget {
                   ),
                 ),
               ),
-
               const SizedBox(height: 30.0),
               TextField(
                 decoration: InputDecoration(
@@ -98,7 +96,63 @@ class InputPage extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(height: 30.0),
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.06),
+                      blurRadius: 12,
+                      offset: const Offset(4, 4),
+                    ),
+                  ],
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: "Buscar producto...",
+                    hintStyle: GoogleFonts.poppins(
+                      fontSize: 14.0,
+                      color: Colors.black.withOpacity(0.37),
+                    ),
 
+                    suffixIcon: Container(
+                      margin: const EdgeInsets.all(3.0),
+                      decoration: BoxDecoration(
+                        color: Colors.pinkAccent,
+                        borderRadius: BorderRadius.circular(16.0),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.pinkAccent.withOpacity(0.4),
+                            offset: const Offset(4, 4),
+                            blurRadius: 7.0,
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        Icons.search,
+                        color: Colors.white,
+                      ),
+                    ),
+
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(18.0),
+                      borderSide: BorderSide(
+                        color: Colors.white,
+                        width: 0,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(18.0),
+                      borderSide: BorderSide(
+                        color: Colors.white,
+                        width: 0,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
