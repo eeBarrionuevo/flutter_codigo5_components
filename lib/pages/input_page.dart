@@ -15,6 +15,11 @@ class _InputPageState extends State<InputPage> {
   TextEditingController _dateTimeController = TextEditingController();
 
   String valueAux = "A";
+  List<String> superheroes = [
+    "Superman",
+    "Wonder Woman",
+    "Batmaman",
+  ];
 
 
   @override
@@ -281,4 +286,7 @@ class _InputPageState extends State<InputPage> {
       _dateTimeController.text = dateSelected.toString().substring(0, 10);
     }
   }
+
+
+
 }
