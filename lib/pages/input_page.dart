@@ -8,6 +8,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   bool isInvisible = true;
+  String name = "";
 
   @override
   Widget build(BuildContext context) {
@@ -164,14 +165,39 @@ class _InputPageState extends State<InputPage> {
                 decoration: InputDecoration(
                   hintText: "Ingrese su contraseña",
                   suffixIcon: IconButton(
-                    icon: isInvisible ? Icon(Icons.remove_red_eye) : Icon(Icons.remove_red_eye_outlined,),
-                    onPressed: (){
+                    icon: isInvisible
+                        ? Icon(Icons.remove_red_eye)
+                        : Icon(
+                            Icons.remove_red_eye_outlined,
+                          ),
+                    onPressed: () {
                       isInvisible = !isInvisible;
-                      setState(() {
-                      });
+                      setState(() {});
                     },
                   ),
                 ),
+              ),
+              const SizedBox(
+                height: 30.0,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  label: Text(
+                    "Ingresa tu nombre",
+                  ),
+                ),
+                onChanged: (String value) {
+                  name = value;
+                },
+                onTap: () {
+                  print("On TAP!!");
+                },
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  print(name);
+                },
+                child: Text("Mostrar valor!"),
               ),
               const SizedBox(
                 height: 100.0,
