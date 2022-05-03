@@ -10,7 +10,11 @@ class _InputPageState extends State<InputPage> {
 
   bool isInvisible = true;
   String name = "";
-  TextEditingController _nameController = TextEditingController();
+  TextEditingController _nameController = TextEditingController(text: "Ramón Juan");
+
+  void getNameData(){
+    print(_nameController.text);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -184,27 +188,38 @@ class _InputPageState extends State<InputPage> {
               ),
               TextField(
                 controller: _nameController,
-                decoration: InputDecoration(
+                keyboardType: TextInputType.name,
+                decoration: const InputDecoration(
                   label: Text(
                     "Ingresa tu nombre",
                   ),
                 ),
-                // onChanged: (String value) {
-                //   name = value;
-                // },
-                // onTap: () {
-                //   print("On TAP!!");
-                // },
               ),
               ElevatedButton(
                 onPressed: () {
-                  _nameController.text = "Ramón";
+                  getNameData();
                   setState(() {
-
                   });
                 },
-                child: Text("Mostrar valor!"),
+                child: const Text("Mostrar valor!"),
               ),
+
+              const SizedBox(
+                height: 30.0,
+              ),
+
+              TextField(
+                decoration: InputDecoration(
+                  hintText: "Fecha de nacimiento",
+                  suffixIcon: Icon(Icons.date_range),
+                ),
+                onTap: (){
+                  print("Holaa");
+                  FocusScope.of(context).requestFocus(FocusNode());
+                },
+              ),
+
+
               const SizedBox(
                 height: 100.0,
               ),
