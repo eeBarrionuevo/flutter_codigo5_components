@@ -44,6 +44,36 @@ class InputPage extends StatelessWidget {
                   print(value);
                 },
               ),
+              const SizedBox(
+                height: 20.0,
+              ),
+
+              TextField(
+                decoration: InputDecoration(
+                  hintText: "Buscar producto",
+                  prefixIcon: Icon(Icons.search,),
+                  enabled: true,
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.deepPurpleAccent,
+                      width: 4.0,
+                    ),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.red,
+                      width: 4.0,
+                    ),
+                  ),
+                  disabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.green,
+                      width: 4.0,
+                    ),
+                  ),
+                ),
+              ),
+
             ],
           ),
         ),
