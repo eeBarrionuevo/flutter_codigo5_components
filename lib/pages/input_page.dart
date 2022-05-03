@@ -14,10 +14,32 @@ class InputPage extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              TextField(
+                maxLines: 1,
+                textAlign: TextAlign.start,
+                maxLength: 20,
+                cursorColor: Colors.deepPurpleAccent,
+                style: const TextStyle(
+                  color: Colors.deepPurpleAccent,
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                ),
+                decoration: InputDecoration(
+                  label: const Text("Correo electrónico"),
+                  hintText: "Ingresa tu correo electrónico",
+                  hintStyle: TextStyle(
+                    color: Colors.black.withOpacity(0.35),
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16.0
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
