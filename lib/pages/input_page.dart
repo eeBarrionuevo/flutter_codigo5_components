@@ -48,7 +48,7 @@ class InputPage extends StatelessWidget {
                 height: 20.0,
               ),
 
-              TextField(
+              const TextField(
                 decoration: InputDecoration(
                   hintText: "Buscar producto",
                   prefixIcon: Icon(Icons.search,),
@@ -70,6 +70,31 @@ class InputPage extends StatelessWidget {
                       color: Colors.green,
                       width: 4.0,
                     ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 30.0),
+              TextField(
+                decoration: InputDecoration(
+                  icon: Icon(Icons.search),
+                  suffixIcon: Icon(Icons.mail),
+                  prefixIcon: Icon(Icons.check_circle_outline),
+                  label: Text("Buscar"),
+                  hintText: "Ingresa el producto a buscar...",
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 2.0,
+                      color: Colors.deepPurpleAccent,
+                    ),
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 2.0,
+                      color: Colors.deepPurpleAccent,
+                    ),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
               ),
