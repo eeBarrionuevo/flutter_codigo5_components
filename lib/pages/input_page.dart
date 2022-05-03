@@ -12,6 +12,8 @@ class _InputPageState extends State<InputPage> {
   TextEditingController _nameController =
       TextEditingController(text: "Ramón Juan");
 
+  TextEditingController _dateTimeController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -202,6 +204,7 @@ class _InputPageState extends State<InputPage> {
                 height: 30.0,
               ),
               TextField(
+                controller: _dateTimeController,
                 toolbarOptions: ToolbarOptions(
                   copy: false,
                   cut: false,
@@ -232,12 +235,18 @@ class _InputPageState extends State<InputPage> {
     print(_nameController.text);
   }
 
-  selectDate() {
-    showDatePicker(
+  selectDate() async {
+    DateTime? dateSelected = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
-      firstDate: DateTime.now(),
-      lastDate: DateTime.now(),
+      firstDate: DateTime(2020),
+      lastDate: DateTime(2030),
     );
+    if(dateSelected != null){
+      _dateTimeController.text = dateSelected.toString();
+      setState(() {
+
+      });
+    }
   }
 }
