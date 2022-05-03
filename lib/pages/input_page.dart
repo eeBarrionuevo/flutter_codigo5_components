@@ -116,7 +116,6 @@ class InputPage extends StatelessWidget {
                       fontSize: 14.0,
                       color: Colors.black.withOpacity(0.37),
                     ),
-
                     suffixIcon: Container(
                       margin: const EdgeInsets.all(3.0),
                       decoration: BoxDecoration(
@@ -135,7 +134,6 @@ class InputPage extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(18.0),
                       borderSide: BorderSide(
@@ -152,6 +150,24 @@ class InputPage extends StatelessWidget {
                     ),
                   ),
                 ),
+              ),
+              const SizedBox(
+                height: 30.0,
+              ),
+              TextField(
+                obscureText: false,
+                decoration: InputDecoration(
+                  hintText: "Ingrese su contraseña",
+                  suffixIcon: IconButton(
+                    icon: Icon(Icons.remove_red_eye),
+                    onPressed: (){
+                      print("sdsdsd");
+                    },
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 100.0,
               ),
             ],
           ),
