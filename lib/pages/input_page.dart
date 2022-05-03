@@ -36,7 +36,13 @@ class InputPage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontSize: 16.0
                   ),
+                  icon: Icon(Icons.email),
+                  prefixIcon: Icon(Icons.alternate_email),
+                  suffixIcon: Icon(Icons.email_outlined),
                 ),
+                onChanged: (String value){
+                  print(value);
+                },
               ),
             ],
           ),
