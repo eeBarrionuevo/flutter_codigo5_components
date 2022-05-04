@@ -68,7 +68,7 @@ class _ListPageState extends State<ListPage> {
             mainAxisSize: MainAxisSize.min,
             children: [
               CircleAvatar(
-                radius: 30,
+                radius: 40,
                 backgroundImage: NetworkImage(hero["image"]),
               ),
               const SizedBox(
@@ -82,13 +82,14 @@ class _ListPageState extends State<ListPage> {
                 ),
               ),
               ListTile(
-                title: Text("29"),
+                title: Text(hero["age"].toString()),
                 subtitle: Text("Superhero age"),
               ),
               ListTile(
-                title: Text("Bruce Wayne"),
+                title: Text(hero["secretIdentity"]),
                 subtitle: Text("Secret Identity"),
               ),
+              ...hero["powers"].map((e)=> Text(e)).toList()
             ],
           ),
         );
