@@ -89,7 +89,7 @@ class _ListPageState extends State<ListPage> {
                 title: Text(hero["secretIdentity"]),
                 subtitle: Text("Secret Identity"),
               ),
-              ...hero["powers"].map<Widget>((e)=> Text(e)).toList()
+              ...hero["powers"].map<Widget>((e) => Text(e)).toList()
             ],
           ),
         );
@@ -123,22 +123,94 @@ class _ListPageState extends State<ListPage> {
       //     );
       //   },
       // ),
+
+      // body: ListView.builder(
+      //   itemCount: teamMap["members"].length,
+      //   itemBuilder: (BuildContext context, int index) {
+      //     return ListTile(
+      //       leading: CircleAvatar(
+      //         radius: 22,
+      //         backgroundImage: NetworkImage(teamMap["members"][index]["image"]),
+      //       ),
+      //       title: Text(teamMap["members"][index]["name"]),
+      //       subtitle: Text(teamMap["squadName"]),
+      //       trailing: IconButton(
+      //         icon: Icon(Icons.remove_red_eye_sharp),
+      //         onPressed: () {
+      //           // print(teamMap["members"][index]);
+      //           showDetailSuperhero(teamMap["members"][index]);
+      //         },
+      //       ),
+      //     );
+      //   },
+      // ),
+
       body: ListView.builder(
-        itemCount: teamMap["members"].length,
+        itemCount: 100,
         itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            leading: CircleAvatar(
-              radius: 22,
-              backgroundImage: NetworkImage(teamMap["members"][index]["image"]),
-            ),
-            title: Text(teamMap["members"][index]["name"]),
-            subtitle: Text(teamMap["squadName"]),
-            trailing: IconButton(
-              icon: Icon(Icons.remove_red_eye_sharp),
-              onPressed: () {
-                // print(teamMap["members"][index]);
-                showDetailSuperhero(teamMap["members"][index]);
-              },
+          return Container(
+            margin: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 10.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 14.0, vertical: 10.0),
+            decoration: BoxDecoration(color: Colors.white, boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.05),
+                blurRadius: 12,
+                offset: const Offset(4, 4),
+              ),
+            ]),
+            child: Row(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Image.network(
+                    "https://picsum.photos/500/500/?image=$index",
+                    height: 60.0,
+                    width: 60.0,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                const SizedBox(
+                  width: 6.0,
+                ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Web Design",
+                        style: GoogleFonts.montserrat(
+                          color: Color(0xff3E4752),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 4.0,
+                      ),
+                      Text(
+                        "Wade Warren",
+                        style: GoogleFonts.montserrat(
+                          color: Color(0xff3E4752).withOpacity(0.6),
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      "06/12/2022",
+                      style: GoogleFonts.montserrat(
+                        color: Color(0xff3E4752).withOpacity(0.45),
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    Text("Completed"),
+                  ],
+                ),
+              ],
             ),
           );
         },
