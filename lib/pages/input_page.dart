@@ -14,8 +14,6 @@ class _InputPageState extends State<InputPage> {
 
   TextEditingController _dateTimeController = TextEditingController();
 
-
-
   List<String> superheroes = [
     "Superman",
     "Wonder Woman",
@@ -24,7 +22,6 @@ class _InputPageState extends State<InputPage> {
   ];
 
   String valueAux = "Superman";
-
 
   @override
   Widget build(BuildContext context) {
@@ -238,8 +235,19 @@ class _InputPageState extends State<InputPage> {
               ),
               DropdownButton(
                 value: valueAux,
-                items: getDataSuperheroe(),
-                onChanged: (value) {
+                items: superheroes
+                    .map(
+                      (e) => DropdownMenuItem(
+                        child: Text(e),
+                        value: e,
+                      ),
+                    )
+                    .toList(),
+                onChanged: (String? value){
+                  valueAux = value!;
+                  setState(() {
+
+                  });
                 },
               ),
               const SizedBox(
@@ -268,7 +276,7 @@ class _InputPageState extends State<InputPage> {
     }
   }
 
-  List<DropdownMenuItem<String>> getDataSuperheroe(){
+  List<DropdownMenuItem<String>> getDataSuperheroe() {
     List<DropdownMenuItem<String>> items = [];
 
     superheroes.forEach((element) {
@@ -281,10 +289,5 @@ class _InputPageState extends State<InputPage> {
     });
 
     return items;
-
   }
-
-
-
-
 }
