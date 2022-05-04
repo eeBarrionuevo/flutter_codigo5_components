@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ListPage extends StatefulWidget {
-
   @override
   State<ListPage> createState() => _ListPageState();
 }
 
 class _ListPageState extends State<ListPage> {
-
   List<String> superheroes = [
     "Superman",
     "Batman",
@@ -15,7 +14,6 @@ class _ListPageState extends State<ListPage> {
     "Flash",
     "Aquaman",
   ];
-
 
   Map<String, dynamic> teamMap = {
     "squadName": "Super hero squad",
@@ -27,7 +25,7 @@ class _ListPageState extends State<ListPage> {
       {
         "name": "Batman",
         "image":
-        "https://www.lacasadeel.net/wp-content/uploads/2021/11/BATMAN-ENCABEZADO.jpg",
+            "https://www.lacasadeel.net/wp-content/uploads/2021/11/BATMAN-ENCABEZADO.jpg",
         "age": 29,
         "secretIdentity": "Dan Jukes",
         "powers": ["Radiation resistance", "Turning tiny", "Radiation blast"]
@@ -35,7 +33,7 @@ class _ListPageState extends State<ListPage> {
       {
         "name": "Superman",
         "image":
-        "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/980px/public/media/image/2021/06/superman-2354819.jpg",
+            "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/980px/public/media/image/2021/06/superman-2354819.jpg",
         "age": 39,
         "secretIdentity": "Jane Wilson",
         "powers": [
@@ -47,7 +45,7 @@ class _ListPageState extends State<ListPage> {
       {
         "name": "Wonder Woman",
         "image":
-        "https://dam.smashmexico.com.mx/wp-content/uploads/2021/10/wonder-woman-historia-comics-escenciales-cover.jpg",
+            "https://dam.smashmexico.com.mx/wp-content/uploads/2021/10/wonder-woman-historia-comics-escenciales-cover.jpg",
         "age": 1000000,
         "secretIdentity": "Unknown",
         "powers": [
@@ -61,8 +59,42 @@ class _ListPageState extends State<ListPage> {
     ]
   };
 
-
-
+  void showDetailSuperhero(Map<String, dynamic> hero) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CircleAvatar(
+                radius: 30,
+                backgroundImage: NetworkImage(hero["image"]),
+              ),
+              const SizedBox(
+                height: 6.0,
+              ),
+              Text(
+                hero["name"],
+                style: GoogleFonts.montserrat(
+                  color: Colors.black87,
+                  fontSize: 18.0,
+                ),
+              ),
+              ListTile(
+                title: Text("29"),
+                subtitle: Text("Superhero age"),
+              ),
+              ListTile(
+                title: Text("Bruce Wayne"),
+                subtitle: Text("Secret Identity"),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +124,7 @@ class _ListPageState extends State<ListPage> {
       // ),
       body: ListView.builder(
         itemCount: teamMap["members"].length,
-        itemBuilder: (BuildContext context, int index){
+        itemBuilder: (BuildContext context, int index) {
           return ListTile(
             leading: CircleAvatar(
               radius: 22,
@@ -102,8 +134,9 @@ class _ListPageState extends State<ListPage> {
             subtitle: Text(teamMap["squadName"]),
             trailing: IconButton(
               icon: Icon(Icons.remove_red_eye_sharp),
-              onPressed: (){
-
+              onPressed: () {
+                // print(teamMap["members"][index]);
+                showDetailSuperhero(teamMap["members"][index]);
               },
             ),
           );
