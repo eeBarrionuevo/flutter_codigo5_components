@@ -89,7 +89,7 @@ class _ListPageState extends State<ListPage> {
                 title: Text(hero["secretIdentity"]),
                 subtitle: Text("Secret Identity"),
               ),
-              ...hero["powers"].map((e)=> Text(e)).toList()
+              ...hero["powers"].map<Widget>((e)=> Text(e)).toList()
             ],
           ),
         );
