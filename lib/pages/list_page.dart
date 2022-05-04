@@ -171,7 +171,7 @@ class _ListPageState extends State<ListPage> {
                   ),
                 ),
                 const SizedBox(
-                  width: 6.0,
+                  width: 8.0,
                 ),
                 Expanded(
                   child: Column(
@@ -207,7 +207,31 @@ class _ListPageState extends State<ListPage> {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    Text("Completed"),
+                    SizedBox(
+                      height: 4.0,
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          height: 7,
+                          width: 7,
+                          decoration: BoxDecoration(
+                            color: Color(0xff3FC2A3),
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 5.0,
+                        ),
+                        Text(
+                          "Completed",
+                          style: GoogleFonts.montserrat(
+                            color: Color(0xff3FC2A3),
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ],
