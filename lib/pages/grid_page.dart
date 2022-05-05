@@ -64,24 +64,7 @@ class GridPage extends StatelessWidget {
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
         childAspectRatio: 1,
-        children: [
-          Container(
-            color: Colors.red,
-            child: Text("Hola 1"),
-          ),
-          Container(
-            color: Colors.greenAccent,
-            child: Text("Hola 2"),
-          ),
-          Container(
-            color: Colors.blue,
-            child: Text("Hola 3"),
-          ),
-          Container(
-            color: Colors.deepPurple,
-            child: Text("Hola 4"),
-          ),
-        ],
+        children: teamMap["members"].map<Widget>((e)=>Text(e["name"])).toList(),
       ),
     );
   }
